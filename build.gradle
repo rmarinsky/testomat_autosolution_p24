@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    google()
+}
+
+dependencies {
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testImplementation('com.codeborne:selenide:7.3.2')
+}
+
+group = 'io.testomat'
+version = '1.0-SNAPSHOT'
+description = 'testomat_autosolution_p24'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+}
+
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform() {
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
