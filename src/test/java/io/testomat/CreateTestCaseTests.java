@@ -1,6 +1,5 @@
 package io.testomat;
 
-import com.codeborne.selenide.Selectors;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -25,14 +24,16 @@ public class CreateTestCaseTests {
         String password = "sLdKk28@RJ@eBPr";
 
         open("https://testomat.io");
+        $("[href*='users/sign_in']").click();
         loginUser(mail, password);
         projectsPageIsLoaded();
+        $("[href='/projects/new']").click();
         createProject(projectName);
         closeOnboardingPopUp();
 
         createTestSuite(suiteName);
 
-        $(byText("suiteName")).shouldBe(visible, Duration.ofSeconds(10000));
+        $(byText(suiteName)).shouldBe(visible, Duration.ofSeconds(10000));
     }
 
     private static void createTestSuite(String suiteName) {

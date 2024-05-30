@@ -21,9 +21,10 @@ version = '1.0-SNAPSHOT'
 description = 'testomat_autosolution_p24'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
-
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
