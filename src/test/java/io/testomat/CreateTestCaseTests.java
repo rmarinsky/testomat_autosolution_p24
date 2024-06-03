@@ -15,27 +15,6 @@ public class CreateTestCaseTests {
 
     private final Faker faker = new Faker();
 
-    @Test
-    @DisplayName("Create test case test")
-    void createFirstTestCaseTest() {
-        var projectName = faker.company().name();
-        var suiteName = faker.company().industry();
-        String mail = "newromka@gmail.com";
-        String password = "sLdKk28@RJ@eBPr";
-
-        open("https://testomat.io");
-        $("[href*='users/sign_in']").click();
-        loginUser(mail, password);
-        projectsPageIsLoaded();
-        $("[href='/projects/new']").click();
-        createProject(projectName);
-        closeOnboardingPopUp();
-
-        createTestSuite(suiteName);
-
-        $(byText(suiteName)).shouldBe(visible, Duration.ofSeconds(10000));
-    }
-
     private static void createTestSuite(String suiteName) {
         $("[placeholder='First Suite']")
                 .val(suiteName)
@@ -61,6 +40,27 @@ public class CreateTestCaseTests {
         $("#content-desktop #user_email").val(mail);
         $("#content-desktop #user_password").val(password);
         $("#content-desktop [name='commit']").click();
+    }
+
+    @Test
+    @DisplayName("Create test case test")
+    void createFirstTestCaseTest() {
+        var projectName = faker.company().name();
+        var suiteName = faker.company().industry();
+        String mail = "newromka@gmail.com";
+        String password = "sLdKk28@RJ@eBPr";
+
+        open("https://testomat.io");
+        $("[href*='users/sign_in']").click();
+        loginUser(mail, password);
+        projectsPageIsLoaded();
+        $("[href='/projects/new']").click();
+        createProject(projectName);
+        closeOnboardingPopUp();
+
+        createTestSuite(suiteName);
+
+        $(byText(suiteName)).shouldBe(visible, Duration.ofSeconds(10000));
     }
 
 }
