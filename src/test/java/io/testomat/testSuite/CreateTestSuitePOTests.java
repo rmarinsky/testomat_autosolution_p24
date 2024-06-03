@@ -1,11 +1,12 @@
-package io.testomat;
+package io.testomat.testSuite;
 
 import com.github.javafaker.Faker;
+import io.testomat.BaseTests;
 import io.testomat.common.Application;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class CreateTestCasePOTests extends BaseTests {
+public class CreateTestSuitePOTests extends BaseTests {
 
     private final Faker faker = new Faker();
     private final Application application = new Application();
@@ -36,6 +37,5 @@ public class CreateTestCasePOTests extends BaseTests {
                 .onboardingPopUpShouldBeVisibleAndClose()
                 .createTestSuite(suiteName);
     }
-
 
 }
