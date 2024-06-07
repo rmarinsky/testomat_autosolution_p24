@@ -1,12 +1,18 @@
 package io.testomat.testSuite;
 
+import com.codeborne.selenide.junit5.TextReportExtension;
 import com.github.javafaker.Faker;
 import io.testomat.BaseTests;
 import io.testomat.common.Application;
+import io.testomat.web.common.data.UserDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+
+@ExtendWith(TextReportExtension.class)
 public class CreateTestSuitePOTests extends BaseTests {
+
 
     private final Faker faker = new Faker();
     private final Application application = new Application();
@@ -16,16 +22,16 @@ public class CreateTestSuitePOTests extends BaseTests {
     void createFirstTestCaseTest() {
         var projectName = faker.company().name();
         var suiteName = faker.company().industry();
-        String mail = "newromka@gmail.com";
-        String password = "sLdKk28@RJ@eBPr";
+
+        var targetUser = new UserDto("newromka@gmail.com", "sLdKk28@RJ@eBPr", true);
 
         application.homePage()
                 .openHomePage()
                 .isLoaded()
                 .openSignInPage();
 
-        application.loginPage()
-                .loginUser(mail, password);
+        application.loginPage(targetUser)
+                .loginUser();
 
         application.projectsListPage()
                 .isLoaded()

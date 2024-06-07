@@ -4,6 +4,7 @@ import io.testomat.web.HomePage;
 import io.testomat.web.LoginPage;
 import io.testomat.web.ProjectPage;
 import io.testomat.web.ProjectsListPage;
+import io.testomat.web.common.data.UserDto;
 
 public class Application {
 
@@ -11,8 +12,8 @@ public class Application {
         return new HomePage();
     }
 
-    public LoginPage loginPage() {
-        return new LoginPage();
+    public LoginPage loginPage(UserDto userDto) {
+        return new LoginPage(userDto);
     }
 
     public ProjectsListPage projectsListPage() {

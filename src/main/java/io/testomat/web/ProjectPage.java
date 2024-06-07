@@ -14,6 +14,8 @@ public class ProjectPage {
     private SelenideElement projectTitleInput = $("#project_title");
 
 
+
+
     public ProjectPage isLoaded() {
         projectTitleInput.shouldBe(visible, Duration.ofSeconds(10000));
         $(Selectors.by("src*", "user_avatar")).shouldBe(visible);
