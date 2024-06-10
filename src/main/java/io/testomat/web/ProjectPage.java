@@ -13,11 +13,8 @@ public class ProjectPage {
 
     private SelenideElement projectTitleInput = $("#project_title");
 
-
-
-
     public ProjectPage isLoaded() {
-        projectTitleInput.shouldBe(visible, Duration.ofSeconds(10000));
+        projectTitleInput.shouldBe(visible, Duration.ofSeconds(10));
         $(Selectors.by("src*", "user_avatar")).shouldBe(visible);
         return this;
     }
@@ -29,7 +26,7 @@ public class ProjectPage {
     }
 
     public ProjectPage onboardingPopUpShouldBeVisibleAndClose() {
-        $(".back").shouldBe(visible, Duration.ofSeconds(10000)).click();
+        $(".back").shouldBe(visible, Duration.ofSeconds(10)).click();
         return this;
     }
 
@@ -38,7 +35,7 @@ public class ProjectPage {
                 .val(suiteName)
                 .pressEnter();
 
-        $(byText(suiteName)).shouldBe(visible, Duration.ofSeconds(10000));
+        $(byText(suiteName)).shouldBe(visible, Duration.ofSeconds(10));
         return this;
     }
 

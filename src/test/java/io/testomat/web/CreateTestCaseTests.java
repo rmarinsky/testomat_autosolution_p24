@@ -1,4 +1,4 @@
-package io.testomat;
+package io.testomat.web;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
@@ -22,18 +22,18 @@ public class CreateTestCaseTests {
     }
 
     private static void closeOnboardingPopUp() {
-        $(".back").shouldBe(visible, Duration.ofSeconds(10000)).click();
+        $(".back").shouldBe(visible, Duration.ofSeconds(10)).click();
     }
 
     private static void createProject(String companyName) {
         $("#project_title")
-                .shouldBe(visible, Duration.ofSeconds(10000))
+                .shouldBe(visible, Duration.ofSeconds(10))
                 .val(companyName);
         $("#project-create-btn input").click();
     }
 
     private static void projectsPageIsLoaded() {
-        $("#user-menu-button img[src*=user_avatar]").shouldBe(visible, Duration.ofSeconds(10000));
+        $("#user-menu-button img[src*=user_avatar]").shouldBe(visible, Duration.ofSeconds(10));
     }
 
     private static void loginUser(String mail, String password) {
@@ -60,7 +60,7 @@ public class CreateTestCaseTests {
 
         createTestSuite(suiteName);
 
-        $(byText(suiteName)).shouldBe(visible, Duration.ofSeconds(10000));
+        $(byText(suiteName)).shouldBe(visible, Duration.ofSeconds(10));
     }
 
 }

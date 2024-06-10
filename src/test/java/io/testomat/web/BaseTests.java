@@ -1,4 +1,4 @@
-package io.testomat;
+package io.testomat.web;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.TextCheck;

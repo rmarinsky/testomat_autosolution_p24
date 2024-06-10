@@ -9,7 +9,7 @@ public class ProjectsListPage {
 
 
     public ProjectsListPage isLoaded() {
-        $("#user-menu-button img[src*=user_avatar]").shouldBe(visible, Duration.ofSeconds(10000));
+        $("#user-menu-button img[src*=user_avatar]").shouldBe(visible, Duration.ofSeconds(10));
         return this;
     }
 

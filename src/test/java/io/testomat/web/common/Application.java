@@ -1,4 +1,4 @@
-package io.testomat.common;
+package io.testomat.web.common;
 
 import io.testomat.web.HomePage;
 import io.testomat.web.LoginPage;

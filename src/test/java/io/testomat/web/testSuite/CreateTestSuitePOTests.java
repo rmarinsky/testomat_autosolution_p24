@@ -1,9 +1,9 @@
-package io.testomat.testSuite;
+package io.testomat.web.testSuite;
 
 import com.codeborne.selenide.junit5.TextReportExtension;
 import com.github.javafaker.Faker;
-import io.testomat.BaseTests;
-import io.testomat.common.Application;
+import io.testomat.web.BaseTests;
+import io.testomat.web.common.Application;
 import io.testomat.web.common.data.UserDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

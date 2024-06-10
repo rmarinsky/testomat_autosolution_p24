@@ -1,4 +1,4 @@
-package io.testomat.testSuite;
+package io.testomat.web.testSuite;
 
 public class UpdateDeleteTestSuite {
 
