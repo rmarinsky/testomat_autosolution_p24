@@ -4,13 +4,16 @@ import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import io.testomat.api.dto.suites.Attributes;
+import io.testomat.api.dto.suites.Data;
+import io.testomat.api.dto.suites.TestSuiteDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class TestSuiteTests {
+public class TestSuiteRawTests {
 
     @Test
     @DisplayName("Login and create test suite in the project")

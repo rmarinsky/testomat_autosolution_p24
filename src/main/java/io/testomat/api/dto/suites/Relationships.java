@@ -1,4 +1,4 @@
-package io.testomat.api;
+package io.testomat.api.dto.suites;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,7 +6,6 @@ import lombok.Builder;
 @lombok.Data
 @Builder
 @AllArgsConstructor
-public class Data{
-	private Attributes attributes;
-	private String type;
+public class Relationships {
+
 }
