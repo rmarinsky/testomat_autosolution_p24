@@ -4,9 +4,9 @@ import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import io.testomat.api.dto.suites.Attributes;
-import io.testomat.api.dto.suites.Data;
-import io.testomat.api.dto.suites.TestSuiteDto;
+import io.testomat.Api.dto.suites.Attributes;
+import io.testomat.Api.dto.suites.Data;
+import io.testomat.Api.dto.suites.TestSuiteDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

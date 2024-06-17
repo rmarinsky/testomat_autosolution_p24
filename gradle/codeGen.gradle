@@ -1,0 +1,30 @@
+String targetDir = "$buildDir/generated/api"
+
+
+openApiGenerate {
+    mkdir("$buildDir/petStore")
+    def spec = new URL("https://petstore.swagger.io/v2/swagger.json").text
+    File targetSpecFile = new File("$buildDir/petStore/pet.json")
+    targetSpecFile.write(spec)
+
+    generatorName.set("spring")
+
+    inputSpec.set(targetSpecFile.path)
+
+    cleanupOutput = false
+
+    outputDir.set(targetDir)
+    generateApiTests = false
+    generateApiDocumentation = false
+    generateModelTests = false
+
+    modelPackage.set("com.petstore.api.dto")
+    configOptions = ["serializationLibrary": "jackson", "dateLibrary": "legacy"]
+
+    globalProperties.set(["models": ""])
+}
+
+
+sourceSets {
+    main.java.srcDir("$targetDir/src/main/java")
+}

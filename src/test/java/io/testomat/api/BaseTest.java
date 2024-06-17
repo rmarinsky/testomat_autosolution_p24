@@ -1,6 +1,6 @@
 package io.testomat.api;
 
-import io.testomat.api.controllers.LoginController;
+import io.testomat.Api.controllers.LoginController;
 
 public class BaseTest {
 

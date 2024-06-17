@@ -1,6 +1,6 @@
 package io.testomat.api.login;
 
-import io.testomat.api.controllers.LoginController;
+import io.testomat.Api.controllers.LoginController;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

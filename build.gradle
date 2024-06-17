@@ -1,25 +1,20 @@
+import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
+
 plugins {
     id 'java'
+    id "org.openapi.generator" version "7.4.0"
+    id 'org.jetbrains.kotlin.jvm' version '1.8.0'
     id "io.freefair.lombok" version "8.6"
+
 }
+
+apply from: "gradle/dependencies.gradle"
+apply from: "gradle/codeGen.gradle"
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation('com.microsoft.playwright:playwright:1.44.0')
-    implementation 'com.github.javafaker:javafaker:1.0.2'
-    implementation('com.codeborne:selenide:7.3.2')
-    implementation('io.rest-assured:rest-assured:5.4.0')
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
-    implementation('org.assertj:assertj-core:3.26.0')
-
-    runtimeOnly 'org.slf4j:slf4j-log4j12:+'
-
-    testImplementation platform('org.junit:junit-bom:5.10.2')
-    testImplementation('org.junit.jupiter:junit-jupiter')
-}
 
 group = 'io.testomat'
 version = '1.0-SNAPSHOT'
@@ -31,11 +26,19 @@ java {
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+kotlin {
+    jvmToolchain(17)
 }
 
-tasks.withType(Javadoc).configureEach {
+tasks.withType(GenerateTask).configureEach {
+    group = "open api"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    dependsOn("openApiGenerate")
+}
+
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 

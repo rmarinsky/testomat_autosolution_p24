@@ -1,9 +1,9 @@
 package io.testomat.api.dto.suitesJackson;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import groovy.transform.builder.Builder;
 import io.testomat.api.dto.suites.Relationships;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @lombok.Data
