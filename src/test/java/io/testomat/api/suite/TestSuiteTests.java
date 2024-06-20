@@ -1,11 +1,11 @@
 package io.testomat.api.suite;
 
 import com.github.javafaker.Faker;
-import io.testomat.Api.BaseTest;
-import io.testomat.Api.controllers.SuitesController;
-import io.testomat.Api.dto.suites.Attributes;
-import io.testomat.Api.dto.suites.Data;
-import io.testomat.Api.dto.suites.TestSuiteDto;
+import io.testomat.api.BaseTest;
+import io.testomat.api.controllers.SuitesController;
+import io.testomat.api.dto.suites.Attributes;
+import io.testomat.api.dto.suites.Data;
+import io.testomat.api.dto.suites.TestSuiteDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

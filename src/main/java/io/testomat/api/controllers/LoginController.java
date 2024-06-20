@@ -7,7 +7,6 @@ public class LoginController extends BaseController<LoginController> {
 
     public Response login(String targetToken) {
         return baseClient()
-                .log().all()
                 .contentType(ContentType.URLENC)
                 .formParam("api_token", targetToken)
                 .post("/login");

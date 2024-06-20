@@ -1,9 +1,11 @@
 package io.testomat.api.common;
 
 import io.restassured.response.Response;
+import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import org.assertj.core.api.Assertions;
 
+@NoArgsConstructor
 public class ResponseDecorator<T> {
 
     private Response targetResponse;
@@ -42,17 +44,17 @@ public class ResponseDecorator<T> {
         return targetResponse.as(targetClass);
     }
 
-    public ResponseDecorator targetResponse(Response targetResponse) {
+    public ResponseDecorator<T> request(Response targetResponse) {
         this.targetResponse = targetResponse;
         return this;
     }
 
-    public ResponseDecorator expectedDefaultStatusCode(int expectedDefaultStatusCode) {
+    public ResponseDecorator<T> expectedDefaultStatusCode(int expectedDefaultStatusCode) {
         this.expectedDefaultStatusCode = expectedDefaultStatusCode;
         return this;
     }
 
-    public ResponseDecorator targetClass(Class<T> targetClass) {
+    public ResponseDecorator<T> targetClass(Class<T> targetClass) {
         this.targetClass = targetClass;
         return this;
     }

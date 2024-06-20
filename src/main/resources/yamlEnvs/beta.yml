@@ -1,0 +1,6 @@
+petStore:
+  apiUrl: https://petstore.swagger.io/v2
+  apiKey: YOUR_API
+testomat:
+  apiUrl: https://beta.testomat.io
+  apiKey: testomat_MwMPpmF7fgLvh-xAdlzhKdyMU57zF2xM0A1718034222

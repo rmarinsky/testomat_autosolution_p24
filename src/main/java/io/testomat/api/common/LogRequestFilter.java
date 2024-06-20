@@ -21,7 +21,7 @@ public class LogRequestFilter implements OrderedFilter {
             logger.info("Request body:\n" + requestSpec.getBody().toString());
 
 
-        Response response = ctx.next(requestSpec, responseSpec);
+        var response = ctx.next(requestSpec, responseSpec);
 
         logger.info(response.getStatusCode() + " " + requestSpec.getURI());
 

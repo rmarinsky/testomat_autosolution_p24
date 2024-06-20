@@ -35,4 +35,26 @@ public class SuitesController extends BaseController<SuitesController> {
         );
     }
 
+    public ResponseDecorator<PostTestSuiteJResponseDto> postSuiteBuilder(TestSuiteDto testSuiteDto) {
+        return new ResponseDecorator<PostTestSuiteJResponseDto>()
+                .request(suiteClient().body(testSuiteDto).post("/suites"))
+                .expectedDefaultStatusCode(200)
+                .targetClass(PostTestSuiteJResponseDto.class);
+    }
+
+    public ResponseDecorator<PostTestSuiteJResponseDto> postSuiteGenrated(TestSuiteDto targetpostSuiteGenrated) {
+        return new ResponseDecorator<PostTestSuiteJResponseDto>()
+                .request(suiteClient().body(targetpostSuiteGenrated).post("/suites"))
+                .expectedDefaultStatusCode(200)
+                .targetClass(PostTestSuiteJResponseDto.class);
+    }
+
+
+    public ResponseDecorator<PostTestSuiteJResponseDto> postSuitesss(String targetPostTestSuiteJResponseDto) {
+        return new ResponseDecorator<PostTestSuiteJResponseDto>()
+                .request(suiteClient().body(targetPostTestSuiteJResponseDto).post("/suites"))
+                .expectedDefaultStatusCode(200)
+                .targetClass(PostTestSuiteJResponseDto.class);
+    }
+
 }

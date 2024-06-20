@@ -2,6 +2,7 @@ package io.testomat.web;
 
 
 import com.codeborne.selenide.Configuration;
+import io.testomat.common.Roles;
 import io.testomat.web.common.data.UserDto;
 import io.testomat.web.common.keyboards.KeyboardEmail;
 
@@ -21,6 +22,24 @@ public class LoginPage {
 
         Configuration.fastSetValue = true;
         $("#content-desktop #user_password").val(this.userDto.password);
+        Configuration.fastSetValue = false;
+
+        $("#content-desktop [name='commit']").click();
+
+        Configuration.clickViaJs = true;
+        if (this.userDto.rememberMe) {
+            $("[for='user_remember_me']").click();
+        }
+        Configuration.clickViaJs = false;
+        return this;
+    }
+
+    public LoginPage loginRole(Roles role) {
+
+        $("#content-desktop #user_email").val(role.creds.username());
+
+        Configuration.fastSetValue = true;
+        $("#content-desktop #user_password").val(role.creds.password());
         Configuration.fastSetValue = false;
 
         $("#content-desktop [name='commit']").click();

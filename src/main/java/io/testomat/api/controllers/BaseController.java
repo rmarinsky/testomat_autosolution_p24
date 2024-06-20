@@ -2,6 +2,7 @@ package io.testomat.api.controllers;
 
 import io.restassured.specification.RequestSpecification;
 import io.testomat.api.common.LogRequestFilter;
+import io.testomat.configs.Config;
 
 import static io.restassured.RestAssured.given;
 
@@ -11,7 +12,7 @@ public abstract class BaseController<T> {
 
     protected RequestSpecification baseClient() {
         var reqSpec = given()
-                .baseUri("https://beta.testomat.io")
+                .baseUri(Config.get().petStore().apiUrl())
                 .basePath("/api")
                 .filters(new LogRequestFilter());
         if (targetToken != null) {

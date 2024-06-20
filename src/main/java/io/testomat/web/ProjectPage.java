@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ProjectPage {
 
-    private SelenideElement projectTitleInput = $("#project_title");
+    private final SelenideElement projectTitleInput = $("#project_title");
 
     public ProjectPage isLoaded() {
         projectTitleInput.shouldBe(visible, Duration.ofSeconds(10));
