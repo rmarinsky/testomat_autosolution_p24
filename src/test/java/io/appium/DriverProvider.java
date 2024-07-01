@@ -45,7 +45,7 @@ public class DriverProvider implements WebDriverProvider {
     private IOSDriver getIOSDriver() throws MalformedURLException {
         XCUITestOptions options = new XCUITestOptions()
                 .setPlatformName("iOS")
-                .setPlatformVersion("17.2")
+                .setPlatformVersion("17.5")
                 .setDeviceName("iPhone 15 Pro")
                 .setApp("com.apple.Preferences") // Set the bundle ID of the Clock app
                 .setNoReset(false);

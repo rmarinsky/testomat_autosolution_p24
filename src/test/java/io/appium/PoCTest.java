@@ -1,11 +1,8 @@
 package io.appium;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
-import com.codeborne.selenide.appium.SelenideAppium;
 import io.appium.java_client.AppiumBy;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -13,26 +10,8 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
-import static io.appium.DriverProvider.Platform.IOS;
-import static io.appium.DriverProvider.Platform.valueOf;
 
-public class PoCTest {
-
-    public void platform(DriverProvider.Platform platform) {
-        System.setProperty("platform", platform.name());
-    }
-
-    public DriverProvider.Platform platform() {
-        return valueOf(System.getProperty("platform"));
-    }
-
-    @BeforeEach
-    public void setUp() {
-        platform(IOS);
-
-        Configuration.browser = DriverProvider.class.getName();
-        SelenideAppium.launchApp();
-    }
+public class PoCTest extends BaseTest {
 
 
     @Test
