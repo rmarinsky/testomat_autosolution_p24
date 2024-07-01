@@ -19,6 +19,7 @@ dependencies {
     implementation 'javax.validation:validation-api:2.0.1.Final'
     implementation 'io.swagger.core.v3:swagger-annotations:2.2.22'
     implementation 'org.springframework:spring-context:4.2.1.RELEASE'
+    implementation 'com.codeborne:selenide-appium:7.3.2'
 
 
     implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
