@@ -1,0 +1,24 @@
+userName: romamarinsky_
+accessKey: wVSDMqu4AesEck
+
+projectName: P24 testomat
+
+buildName: browserstack build
+buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${expression}
+
+framework: juniе5
+
+platforms:
+  - deviceName: iPhone 15
+    osVersion: 17
+    browserName: Safari
+    deviceOrientation: portrait
+
+parallelsPerPlatform: 1
+
+source: p24:appium:0.1
+
+debug: false
+networkLogs: false
+consoleLogs: errors
+
